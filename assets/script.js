@@ -24,14 +24,10 @@ for (i of choiceBtn) {
       score += 10;
       quizQ[x].setAttribute("style", "display:none;");
       quizQ[x+=1].setAttribute("style", "display:block;");
-    } else if (x == choiceBtn.length-1) {
-      timeLeft = 0;
-      quizQ[x].setAttribute('style', 'display:none;')
-      start.setAttribute('style', 'display: block;')
     } else {
-      timeLeft -= 10;
+      timeLeft = 0;
       quizQ[x].setAttribute("style", "display:none;");
-      quizQ[x+=1].setAttribute("style", "display:block;");
+      start.setAttribute("style", "display:block;");
     }
   })
 }
