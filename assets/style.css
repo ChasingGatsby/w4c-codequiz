@@ -1,0 +1,54 @@
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    height: 60px;
+}
+
+header h3 {
+    border: solid blue;
+    width: max-content;
+    height: max-content;
+}
+
+.open {
+    border: solid purple;
+    width: max-content;
+    margin: 0 auto;
+    position: relative;
+    height: 350px;
+}
+
+.open h1{
+    border: solid purple;
+    text-align: center;
+    margin: 0 auto;
+    width: max-content;
+    font-size: 45px;
+    padding: 10px; 
+}
+
+.open p {
+    padding-top: 10px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.oof {
+    font-weight: 900;
+    font-size: 25px;
+}
+
+.start {
+    color:white;
+    padding: 10px;
+    background-color: maroon;
+}
+
+.button {
+    margin: 0;
+    position:absolute;
+    left: 30%;
+    top: 75%;
+}
