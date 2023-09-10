@@ -7,6 +7,10 @@ header {
   border: solid blue;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 .head {
   border: solid blue;
   width: max-content;
@@ -58,4 +62,30 @@ header {
   position: absolute;
   left: 30%;
   top: 75%;
+}
+
+.quest {
+  width: 647px;
+  margin: 0 auto;
+  height: max-content;
+  border: solid purple;
+}
+
+.quest h1 {
+  font-size: 30px;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+.choice li {
+  /* border: solid purple; */
+  margin-left: 10px;
+  margin-bottom: 15px;
+}
+
+.choice button {
+  background-color: maroon;
+  color: white;
+  font-weight: bolder;
+  padding: 8px;
 }
