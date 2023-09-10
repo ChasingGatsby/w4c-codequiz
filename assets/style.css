@@ -28,6 +28,7 @@ button:hover {
   margin: 0 auto;
   position: relative;
   height: 350px;
+  /* display: none; */
 }
 
 .open h1 {
@@ -66,9 +67,10 @@ button:hover {
 
 .quest {
   width: 647px;
-  margin: 0 auto;
+  margin: 15px auto;
   height: max-content;
   border: solid purple;
+  
 }
 
 .quest h1 {
