@@ -1,0 +1,93 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  height: 100px;
+  border: solid blue;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.head {
+  border: solid blue;
+  width: max-content;
+  height: max-content;
+  font-size: 20px;
+}
+
+.head h3 {
+  width: 100px;
+}
+
+.open {
+  border: solid purple;
+  width: max-content;
+  margin: 0 auto;
+  position: relative;
+  height: 350px;
+  /* display: none; */
+}
+
+.open h1 {
+  border: solid purple;
+  text-align: center;
+  margin: 0 auto;
+  width: max-content;
+  font-size: 45px;
+  padding: 10px;
+}
+
+.open p {
+  padding-top: 10px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.oof {
+  font-weight: 900;
+  font-size: 25px;
+}
+
+.start {
+  color: white;
+  padding: 15px;
+  background-color: maroon;
+  font-style: oblique;
+}
+
+.button {
+  margin: 0;
+  position: absolute;
+  left: 30%;
+  top: 75%;
+}
+
+.quest {
+  width: 647px;
+  margin: 15px auto;
+  height: max-content;
+  border: solid purple;
+  
+}
+
+.quest h1 {
+  font-size: 30px;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+.choice li {
+  /* border: solid purple; */
+  margin-left: 10px;
+  margin-bottom: 15px;
+}
+
+.choice button {
+  background-color: maroon;
+  color: white;
+  font-weight: bolder;
+  padding: 8px;
+}

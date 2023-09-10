@@ -1,14 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href ="./assets/reset.css"
-    <link rel="stylesheet" href = "./assets/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/reset.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
     <title>Code Quiz</title>
-</head>
-<body>
+  </head>
+  <body>
+    <header>
+      <h3 class="head">User Scores</h3>
+      <div class="head">
+        <h3>Time:</h3>
+      </div>
+    </header>
+    <div class="open">
+      <h1>Coding Quiz</h1>
+      <p>
+        Once you click the button below, you will have
+        <span class="oof">ONE</span> minute to answer all the questions!
+      </p>
+      <p>
+        If you select the wrong answer, 10 seconds will be deducted from your
+        current time left!!!
+      </p>
+      <p>Can <span class="oof">YOU</span> answer them all in time?</p>
+      <p>
+        Can you even answer <span class="oof">ANY</span> of these questions?
+      </p>
+      <div class="button">
+        <button class="oof start">LET'S FIND OUT</button>
+      </div>
+    </div>
+    <section class="quest first">
+      <h1>In what direction does code in HTML, CSS, and JavaScript execute?</h1>
+      <ul class="choice">
+        <li><button class="correct">Top to bottom</button></li>
+        <li><button>Bottom to top</button></li>
+        <li><button>From the middle outward</button></li>
+        <li><button>You dictate the direction</button></li>
+      </ul>
+    </section>
+    <section class="quest second">
+      <h1>Which of these statements is false?</h1>
+      <ul class="choice">
+        <li><button>HTML represents an application's structure.</button></li>
+        <li>
+          <button class="correct">
+            CSS represents an application's color.
+          </button>
+        </li>
+        <li><button>JavaScript represents an application's logic.</button></li>
+        <li><button>None of the above</button></li>
+      </ul>
+    </section>
 
-    <h1>Coding Quiz</h1>
-</body>
+    <script src="./assets/script.js"></script>
+  </body>
 </html>
