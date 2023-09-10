@@ -20,6 +20,11 @@ button:hover {
 
 .head h3 {
   width: 100px;
+  text-align: center;
+}
+
+.timeLeft {
+  font-size: 50px;
 }
 
 .open {
@@ -28,7 +33,6 @@ button:hover {
   margin: 0 auto;
   position: relative;
   height: 350px;
-  /* display: none; */
 }
 
 .open h1 {
@@ -81,7 +85,6 @@ button:hover {
 }
 
 .choice li {
-  /* border: solid purple; */
   margin-left: 10px;
   margin-bottom: 15px;
 }

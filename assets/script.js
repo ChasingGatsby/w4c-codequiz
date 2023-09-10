@@ -16,7 +16,6 @@ function startQ() {
   }
 
 
-
 for (i of choiceBtn) {
   x = 0;
   i.addEventListener('click', function(event) {
