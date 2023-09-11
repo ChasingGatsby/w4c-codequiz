@@ -10,7 +10,6 @@ var startBtn = document.querySelector(".start");
 var choiceBtn = document.querySelectorAll("button:not(.admin");
 var questList = document.querySelectorAll(".quest");
 
-console.log(choiceBtn);
 console.log(questList);
 
 function startQ() {
