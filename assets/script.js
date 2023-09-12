@@ -18,20 +18,15 @@ var allScores = []
 
 function setTime() {
   timeLeft = 60;
-  var timerInterval = setInterval(function () {
+  timerInterval = setInterval(function () {
     timeLeft--;
     time.textContent = timeLeft;
     if (timeLeft === 0) {
-      endTime(timerInterval)
-      finish.setAttribute("style", "display:block;")
+      endQuiz(timerInterval)
       }
     }, 1000)
 }
 
-function endTime() {
-  clearInterval(timerInterval);
-  time.textContent = "NONE LOL"
-}
 
 function startQ() {
   setTime();
@@ -40,11 +35,13 @@ function startQ() {
 }
 
 function endQuiz() {
+  clearInterval(timerInterval);
+  time.textContent = "NONE LOL"
   quizQ[x].setAttribute("style", "display:none;");
-      finish.setAttribute("style", "display:block;");
-      x = 0;
-      finalScore = score;
-      score = 0;
+  finish.setAttribute("style", "display:block;");
+  x = 0;
+  finalScore = score;
+  score = 0;
 }
 
 for (i of choiceBtn) {
@@ -71,10 +68,8 @@ for (i of choiceBtn) {
     ) {
       score += 10
       endQuiz();
-      endTime()
     } else {
       endQuiz();
-      endTime();
     }
   });
 }
