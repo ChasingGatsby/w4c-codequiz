@@ -11,6 +11,13 @@ button:hover {
   cursor: pointer;
 }
 
+section {
+  width:650px;
+  margin: 0 auto;
+  border-color: purple;
+  text-align: center;
+}
+
 .head {
   border: solid blue;
   width: max-content;
@@ -29,15 +36,12 @@ button:hover {
 
 .open {
   border: solid purple;
-  width: max-content;
-  margin: 0 auto;
   position: relative;
   height: 350px;
 }
 
 .open h1 {
   border: solid purple;
-  text-align: center;
   margin: 0 auto;
   width: max-content;
   font-size: 45px;
@@ -46,7 +50,6 @@ button:hover {
 
 .open p {
   padding-top: 10px;
-  text-align: center;
   line-height: 1.5;
 }
 
@@ -55,7 +58,7 @@ button:hover {
   font-size: 25px;
 }
 
-.start {
+.admin {
   color: white;
   padding: 15px;
   background-color: maroon;
@@ -70,7 +73,6 @@ button:hover {
 }
 
 .quest {
-  width: 647px;
   margin: 15px auto;
   height: max-content;
   border: solid purple;
@@ -97,22 +99,31 @@ button:hover {
 }
 
 .finish {
-  width: 647px;
   margin: 15px auto;
   height: max-content;
   border: solid purple;
-  text-align: center;
   display: none;
 }
 
 .finish h1 {
   border: solid purple;
-  text-align: center;
-  margin: 0 auto;
-  width: max-content;
   font-size: 50px;
   padding: 10px;
   font-weight: 200px;
+}
+
+.redirect {
+  display:none;
+}
+
+.redirect h1 {
+  font-size: 50px;
+  margin: 15px;
+}
+
+.redirect p {
+  font-size: 30px;
+  padding:10px;
 }
 
 .finish h2 {
@@ -124,4 +135,8 @@ button:hover {
   margin: 10px;
   text-align:center;
   font-size:20px;
+}
+
+#lmao {
+  font-size:10px;
 }

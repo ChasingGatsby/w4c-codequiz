@@ -10,6 +10,9 @@ var choiceBtn = document.querySelectorAll("button:not(.admin");
 var questList = document.querySelectorAll(".quest");
 var initialInput = document.querySelector("#name")
 var submitBtn = document.querySelector("#submit")
+var returnPg = document.querySelector(".redirect")
+var returnBtn = document.getElementById("goback")
+
 var allScores = []
 
 function setTime() {
@@ -27,8 +30,8 @@ function setTime() {
 function startQ() {
   setTime();
   // startBtn.setAttribute("disabled", true)
-  start.setAttribute("style", "display: none");
-  quizQ[0].setAttribute("style", "display:block");
+  start.setAttribute("style", "display: none;");
+  quizQ[0].setAttribute("style", "display:block;");
 }
 
 for (i of choiceBtn) {
@@ -78,9 +81,15 @@ function recordInfo () {
   }
   allScores.push(userInfo)
   localStorage.setItem("allScores", JSON.stringify(allScores))
-  start.setAttribute("style", "display:block;")
   finish.setAttribute("style", "display:none;")
+  returnPg.setAttribute("style", "display:block;")
+}
+
+function goback () {
+  start.setAttribute("style", "display:block;")
+  returnPg.setAttribute("style", "display:none")
 }
 
 startBtn.addEventListener("click", startQ);
 submitBtn.addEventListener("click", recordInfo)
+returnBtn.addEventListener("click", goback)
