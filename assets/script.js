@@ -22,7 +22,7 @@ function setTime() {
     time.textContent = timeLeft;
     if (timeLeft === 0) {
       clearInterval(timerInterval);
-      start.setAttribute("style", "display:block;")
+      finish.setAttribute("style", "display:block;")
     }
   }, 1000);
 }
@@ -49,22 +49,20 @@ for (i of choiceBtn) {
       !event.target.classList.contains("correct") &&
       x < questList.length - 1
     ) {
-      timeLeft -= 10
+      timeLeft - 10
       quizQ[x].setAttribute("style", "display:none;");
       quizQ[(x += 1)].setAttribute("style", "display:block;");
     } else if (
       event.target.classList.contains("correct") &&
       x == questList.length - 1
     ) {
-      timeLeft = 0;
-      score += 10;
       quizQ[x].setAttribute("style", "display:none;");
       finish.setAttribute("style", "display:block;");
       x = 0;
       finalScore = score;
       score = 0;
     } else {
-      timeLeft = 0;
+  
       quizQ[x].setAttribute("style", "display:none;");
       finish.setAttribute("style", "display:block;");
       x = 0;
@@ -79,10 +77,14 @@ function recordInfo () {
     initial: initialInput.value,
     score: finalScore
   }
+  if (initialInput.value == "") {
+    alert("Plase submit some REAL initials lol")
+  } else {
   allScores.push(userInfo)
   localStorage.setItem("allScores", JSON.stringify(allScores))
   finish.setAttribute("style", "display:none;")
   returnPg.setAttribute("style", "display:block;")
+  }
 }
 
 function goback () {
