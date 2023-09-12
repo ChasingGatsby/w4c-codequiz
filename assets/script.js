@@ -1,11 +1,20 @@
 var score = 0;
 var finalScore;
 var time = document.getElementById("timeLeft");
+var timeLeft;
 var quizQ = document.querySelectorAll(".quest");
 var start = document.querySelector(".open");
+var finish = document.querySelector(".finish")
 var startBtn = document.querySelector(".start");
 var choiceBtn = document.querySelectorAll("button:not(.admin");
 var questList = document.querySelectorAll(".quest");
+var initialInput = document.querySelector("#name")
+var submitBtn = document.querySelector("#submit")
+var userInfo = {
+  initial: initialInput.value,
+  score: finalScore
+
+}
 
 function setTime() {
   let timeLeft = 60;
@@ -14,12 +23,14 @@ function setTime() {
     time.textContent = timeLeft;
     if (timeLeft === 0) {
       clearInterval(timerInterval);
+      start.setAttribute("style", "display:block;")
     }
   }, 1000);
 }
 
 function startQ() {
   setTime();
+  startBtn.setAttribute("disabled", true)
   start.setAttribute("style", "display: none");
   quizQ[0].setAttribute("style", "display:block");
 }
@@ -39,6 +50,7 @@ for (i of choiceBtn) {
       !event.target.classList.contains("correct") &&
       x < questList.length - 1
     ) {
+      timeLeft -= 10
       quizQ[x].setAttribute("style", "display:none;");
       quizQ[(x += 1)].setAttribute("style", "display:block;");
     } else if (
@@ -48,7 +60,7 @@ for (i of choiceBtn) {
       timeLeft = 0;
       score += 10;
       quizQ[x].setAttribute("style", "display:none;");
-      start.setAttribute("style", "display:block;");
+      finish.setAttribute("style", "display:block;");
       x = 0;
       finalScore = score;
       console.log(score);
@@ -56,7 +68,7 @@ for (i of choiceBtn) {
     } else {
       timeLeft = 0;
       quizQ[x].setAttribute("style", "display:none;");
-      start.setAttribute("style", "display:block;");
+      finish.setAttribute("style", "display:block;");
       x = 0;
       finalScore = score;
       console.log(score);
@@ -65,4 +77,16 @@ for (i of choiceBtn) {
   });
 }
 
+function recordInfo () {
+  var userInfo = {
+    initial: initialInput.value,
+    score: finalScore
+  }
+  localStorage.setItem("userInfo", JSON.stringify(userInfo))
+  start.setAttribute("style", "display:block;")
+  finish.setAttribute("style", "display:none;")
+}
+
 startBtn.addEventListener("click", startQ);
+console.log(userInfo)
+submitBtn.addEventListener("click", recordInfo)
