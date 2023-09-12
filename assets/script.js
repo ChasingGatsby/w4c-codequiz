@@ -10,11 +10,7 @@ var choiceBtn = document.querySelectorAll("button:not(.admin");
 var questList = document.querySelectorAll(".quest");
 var initialInput = document.querySelector("#name")
 var submitBtn = document.querySelector("#submit")
-var userInfo = {
-  initial: initialInput.value,
-  score: finalScore
-
-}
+var allScores = []
 
 function setTime() {
   let timeLeft = 60;
@@ -30,7 +26,7 @@ function setTime() {
 
 function startQ() {
   setTime();
-  startBtn.setAttribute("disabled", true)
+  // startBtn.setAttribute("disabled", true)
   start.setAttribute("style", "display: none");
   quizQ[0].setAttribute("style", "display:block");
 }
@@ -63,7 +59,6 @@ for (i of choiceBtn) {
       finish.setAttribute("style", "display:block;");
       x = 0;
       finalScore = score;
-      console.log(score);
       score = 0;
     } else {
       timeLeft = 0;
@@ -71,7 +66,6 @@ for (i of choiceBtn) {
       finish.setAttribute("style", "display:block;");
       x = 0;
       finalScore = score;
-      console.log(score);
       score = 0;
     }
   });
@@ -82,11 +76,11 @@ function recordInfo () {
     initial: initialInput.value,
     score: finalScore
   }
-  localStorage.setItem("userInfo", JSON.stringify(userInfo))
+  allScores.push(userInfo)
+  localStorage.setItem("allScores", JSON.stringify(allScores))
   start.setAttribute("style", "display:block;")
   finish.setAttribute("style", "display:none;")
 }
 
 startBtn.addEventListener("click", startQ);
-console.log(userInfo)
 submitBtn.addEventListener("click", recordInfo)
