@@ -1,18 +1,25 @@
 var score = 0;
 var finalScore;
-var timeLeft;
+var time = document.getElementById("timeLeft");
 var quizQ = document.querySelectorAll(".quest");
 var start = document.querySelector(".open");
-
-console.log(quizQ);
-
 var startBtn = document.querySelector(".start");
 var choiceBtn = document.querySelectorAll("button:not(.admin");
 var questList = document.querySelectorAll(".quest");
 
-console.log(questList);
+function setTime() {
+  let timeLeft = 60;
+  var timerInterval = setInterval(function () {
+    timeLeft--;
+    time.textContent = timeLeft;
+    if (timeLeft === 0) {
+      clearInterval(timerInterval);
+    }
+  }, 1000);
+}
 
 function startQ() {
+  setTime();
   start.setAttribute("style", "display: none");
   quizQ[0].setAttribute("style", "display:block");
 }
@@ -57,4 +64,5 @@ for (i of choiceBtn) {
     }
   });
 }
+
 startBtn.addEventListener("click", startQ);
