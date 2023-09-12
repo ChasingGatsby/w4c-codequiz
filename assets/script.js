@@ -12,26 +12,39 @@ var initialInput = document.querySelector("#name")
 var submitBtn = document.querySelector("#submit")
 var returnPg = document.querySelector(".redirect")
 var returnBtn = document.getElementById("goback")
+var timerInterval
 
 var allScores = []
 
 function setTime() {
-  let timeLeft = 60;
+  timeLeft = 60;
   var timerInterval = setInterval(function () {
     timeLeft--;
     time.textContent = timeLeft;
     if (timeLeft === 0) {
-      clearInterval(timerInterval);
+      endTime(timerInterval)
       finish.setAttribute("style", "display:block;")
-    }
-  }, 1000);
+      }
+    }, 1000)
+}
+
+function endTime() {
+  clearInterval(timerInterval);
+  time.textContent = "NONE LOL"
 }
 
 function startQ() {
   setTime();
-  // startBtn.setAttribute("disabled", true)
   start.setAttribute("style", "display: none;");
   quizQ[0].setAttribute("style", "display:block;");
+}
+
+function endQuiz() {
+  quizQ[x].setAttribute("style", "display:none;");
+      finish.setAttribute("style", "display:block;");
+      x = 0;
+      finalScore = score;
+      score = 0;
 }
 
 for (i of choiceBtn) {
@@ -49,25 +62,19 @@ for (i of choiceBtn) {
       !event.target.classList.contains("correct") &&
       x < questList.length - 1
     ) {
-      timeLeft - 10
+      timeLeft -= 10
       quizQ[x].setAttribute("style", "display:none;");
       quizQ[(x += 1)].setAttribute("style", "display:block;");
     } else if (
       event.target.classList.contains("correct") &&
       x == questList.length - 1
     ) {
-      quizQ[x].setAttribute("style", "display:none;");
-      finish.setAttribute("style", "display:block;");
-      x = 0;
-      finalScore = score;
-      score = 0;
+      score += 10
+      endQuiz();
+      endTime()
     } else {
-  
-      quizQ[x].setAttribute("style", "display:none;");
-      finish.setAttribute("style", "display:block;");
-      x = 0;
-      finalScore = score;
-      score = 0;
+      endQuiz();
+      endTime();
     }
   });
 }
