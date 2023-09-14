@@ -14,6 +14,7 @@ button:hover {
 
 button {
   border-color: black;
+  border-width: 5px;
 }
 
 section {
@@ -38,6 +39,10 @@ section {
   color:white;
   position:relative;
   right: 100px;
+}
+
+.hiscore {
+  margin-left:10px;
 }
 
 .timeLeft {

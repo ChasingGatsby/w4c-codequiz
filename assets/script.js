@@ -10,6 +10,7 @@ var choiceBtn = document.querySelectorAll("button:not(.admin");
 var questList = document.querySelectorAll(".quest");
 var initialInput = document.querySelector("#name")
 var submitBtn = document.querySelector("#submit")
+var nameInput = document.getElementById("name")
 var thanksPg = document.querySelector(".thanks")
 var redirectBtn = document.querySelectorAll(".redirect")
 var timerInterval
@@ -102,6 +103,7 @@ function recordInfo () {
   finish.setAttribute("style", "display:none;")
   thanksPg.setAttribute("style", "display:block;")
   }
+  nameInput.value = ""
 }
 
 function showScore () {
@@ -118,7 +120,7 @@ function showScore () {
     })
     for (let i = 0; i < sortedScore.length; i++) {
       let li = document.createElement('li')
-      li.textContent = sortedScore[i].initial + ": " + sortedScore[i].score;
+      li.textContent = sortedScore[i].score + " - " + sortedScore[i].initial;
       scoreList.appendChild(li)
     }
     start.setAttribute("style", "display:none");
