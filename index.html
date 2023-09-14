@@ -10,7 +10,7 @@
 
   <body>
     <header>
-      <h3 class="head">User Scores</h3>
+      <button class="head hiscore admin">User Scores</button>
       <div class="head">
         <h3>Time: <span id="timeLeft"></span></h3>
       </div>
@@ -34,7 +34,7 @@
       </div>
     </section>
     <section class="quest">
-      <h1>In what direction does code JavaScript execute?</h1>
+      <h1>In what direction does JavaScript execute?</h1>
       <ul class="choice">
         <li><button class="correct">Top to bottom</button></li>
         <li><button>Bottom to top</button></li>
@@ -47,9 +47,7 @@
       <ul class="choice">
         <li><button>Number</button></li>
         <li>
-          <button class="correct">
-            Class
-          </button>
+          <button class="correct">Class</button>
         </li>
         <li><button>Boolean</button></li>
         <li><button>Undefined</button></li>
@@ -68,29 +66,38 @@
     </section>
     <section class="finish">
       <h1>FINISH!</h1>
-      <h2>You did it!
-      </h2>
+      <h2>You did it!</h2>
       <h2>...</h2>
       <h2>I think?</h2>
-      <br>
+      <br />
       <h3>Put your initials below to record your score!</h3>
-      <input type="text" id ="name" placeholder="Initials">
-      <br>
-      <input type="submit" id="submit">
+      <input type="text" id="name" placeholder="Initials" />
+      <br />
+      <input type="submit" id="submit" />
     </section>
-    <section class="redirect">
+    <section class="thanks return">
       <h1>THANKS FOR PLAYING!</h1>
-      <p>You can check your scores by clicking the High Scores button at the top!</p>
-      <br>
-      <br>
-      <br>
-      <br>
+      <p>
+        You can check your scores by clicking the High Scores button at the top!
+      </p>
+      <br />
+      <br />
+      <br />
+      <br />
       <p>Unless...</p>
-      <br>
-      <br>
+      <br />
+      <br />
       <p>You're scared<span id="lmao">lmao</span></p>
+      <br />
+      <button class="oof admin redirect">RETURN TO TITLE SCREEN</button>
+    </section>
+    <section class="scorepage return">
+      <h1>HIGH SCORES</h1>
+      <ol id="scorelist">
+      </ol>
       <br>
-      <button class="oof admin" id="goback">RETURN TO TITLE SCREEN</button>
+      <br>
+      <button class="oof admin redirect">RETURN TO TITLE SCREEN</button>
     </section>
 
     <script src="./assets/script.js"></script>

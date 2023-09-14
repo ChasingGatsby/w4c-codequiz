@@ -10,9 +10,12 @@ var choiceBtn = document.querySelectorAll("button:not(.admin");
 var questList = document.querySelectorAll(".quest");
 var initialInput = document.querySelector("#name")
 var submitBtn = document.querySelector("#submit")
-var returnPg = document.querySelector(".redirect")
-var returnBtn = document.getElementById("goback")
+var thanksPg = document.querySelector(".thanks")
+var redirectBtn = document.querySelectorAll(".redirect")
 var timerInterval
+var scoreList = document.getElementById("scorelist")
+var scorePage = document.querySelector(".scorepage")
+var hiScore = document.querySelector(".hiscore")
 
 var allScores = []
 
@@ -74,26 +77,51 @@ for (i of choiceBtn) {
   });
 }
 
+for (i of redirectBtn) {
+  i.addEventListener("click", function () {
+  start.setAttribute("style", "display:block;")
+  scorePage.setAttribute("style", "display:none;");
+  thanksPg.setAttribute("style", "display:none")
+})
+}
+
 function recordInfo () {
   var userInfo = {
     initial: initialInput.value,
     score: finalScore
   }
   if (initialInput.value == "") {
-    alert("Plase submit some REAL initials lol")
+    alert("Please submit some REAL initials lol")
   } else {
   allScores.push(userInfo)
   localStorage.setItem("allScores", JSON.stringify(allScores))
   finish.setAttribute("style", "display:none;")
-  returnPg.setAttribute("style", "display:block;")
+  thanksPg.setAttribute("style", "display:block;")
   }
 }
 
-function goback () {
-  start.setAttribute("style", "display:block;")
-  returnPg.setAttribute("style", "display:none")
-}
+function showScore () {
+ let sortedScore = JSON.parse(localStorage.getItem("allScores"))
+  scoreList.innerHTML = "";
+  sortedScore.sort((a, b) => {
+    if (a.score > b.score) {
+      return -1;
+    } 
+    if (a.score < b.score) {
+      return 1;
+    }
+    return 0;
+    })
+    for (let i = 0; i < sortedScore.length; i++) {
+      let li = document.createElement('li')
+      li.textContent = sortedScore[i].initial + ", " + sortedScore[i].score;
+      scoreList.appendChild(li)
+    }
+    start.setAttribute("style", "display:none");
+    scorePage.setAttribute("style", "display:block");
+  }
+
 
 startBtn.addEventListener("click", startQ);
 submitBtn.addEventListener("click", recordInfo)
-returnBtn.addEventListener("click", goback)
+hiScore.addEventListener("click", showScore)
