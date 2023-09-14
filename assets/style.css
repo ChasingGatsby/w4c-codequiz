@@ -85,7 +85,15 @@ section {
   margin-bottom: 20px;
 }
 
+.choice {
+  width:max-content;
+  margin:auto;
+  
+
+}
+
 .choice li {
+  text-align:left;
   margin-left: 10px;
   margin-bottom: 15px;
 }
@@ -112,16 +120,16 @@ section {
   font-weight: 200px;
 }
 
-.redirect {
+.return {
   display:none;
 }
 
-.redirect h1 {
+.return h1 {
   font-size: 50px;
   margin: 15px;
 }
 
-.redirect p {
+.return p {
   font-size: 30px;
   padding:10px;
 }
@@ -129,6 +137,29 @@ section {
 .finish h2 {
   font-size: 30px;
   margin: 15px;
+}
+
+.scorepage {
+  display: none;
+}
+
+.scorepage h1 {
+  font-size: 45px;
+  margin: 10px;
+}
+
+#scorelist {
+  list-style: inside decimal;
+  width:max-content;
+  margin: auto;
+}
+
+
+#scorelist li {
+  text-align: left;
+  margin: 5px;
+  font-weight: 700;
+  font-size: 30px;
 }
 
 #name {
