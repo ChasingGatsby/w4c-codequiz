@@ -32,6 +32,8 @@ function setTime() {
 
 
 function startQ() {
+  hiScore.disabled =true;
+  hiScore.setAttribute("style", "background-color: rgb(204, 147, 147);")
   setTime();
   start.setAttribute("style", "display: none;");
   quizQ[0].setAttribute("style", "display:block;");
@@ -82,6 +84,8 @@ for (i of redirectBtn) {
   start.setAttribute("style", "display:block;")
   scorePage.setAttribute("style", "display:none;");
   thanksPg.setAttribute("style", "display:none")
+  hiScore.disabled = false;
+  hiScore.removeAttribute("style", "background-color: rgb(204, 147, 147;")
 })
 }
 
@@ -119,6 +123,7 @@ function showScore () {
     }
     start.setAttribute("style", "display:none");
     scorePage.setAttribute("style", "display:block");
+
   }
 
 
