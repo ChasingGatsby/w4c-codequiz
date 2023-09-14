@@ -95,7 +95,7 @@ function recordInfo () {
     score: finalScore
   }
   if (initialInput.value == "") {
-    alert("Please submit some REAL initials lol")
+    alert("Put in an ACTUAL name lol")
   } else {
   allScores.push(userInfo)
   localStorage.setItem("allScores", JSON.stringify(allScores))
@@ -118,7 +118,7 @@ function showScore () {
     })
     for (let i = 0; i < sortedScore.length; i++) {
       let li = document.createElement('li')
-      li.textContent = sortedScore[i].initial + ", " + sortedScore[i].score;
+      li.textContent = sortedScore[i].initial + ": " + sortedScore[i].score;
       scoreList.appendChild(li)
     }
     start.setAttribute("style", "display:none");

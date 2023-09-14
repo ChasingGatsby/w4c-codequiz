@@ -3,31 +3,41 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 5px;
-  height: 100px;
-  border: solid blue;
+  height: 125px;
+  border: solid black;
+  background-color: #dd5847;
 }
 
 button:hover {
   cursor: pointer;
 }
 
+button {
+  border-color: black;
+}
+
 section {
-  width:650px;
-  margin: 0 auto;
-  border-color: purple;
+  width:675px;
+  margin: 12px auto;
+  border: solid black;
+  background-color: #F2E8C6;
   text-align: center;
+  border-radius: 15px;
 }
 
 .head {
-  border: solid blue;
   width: max-content;
   height: max-content;
   font-size: 20px;
 }
 
 .head h3 {
-  width: 100px;
+  width: min-content;
   text-align: center;
+  font-size: 30px;
+  color:white;
+  position:relative;
+  right: 100px;
 }
 
 .timeLeft {
@@ -35,13 +45,11 @@ section {
 }
 
 .open {
-  border: solid purple;
   position: relative;
   height: 350px;
 }
 
 .open h1 {
-  border: solid purple;
   margin: 0 auto;
   width: max-content;
   font-size: 45px;
@@ -75,16 +83,15 @@ section {
 .quest {
   margin: 15px auto;
   height: max-content;
-  border: solid purple;
   display: none;
  
   flex-direction: column;
-  height: 400px;
+  height: max-content;
 }
 
 .quest h1 {
   font-size: 30px;
-  padding: 5px;
+  padding: 10px;
   margin-bottom: 20px;
 }
 
@@ -112,19 +119,20 @@ section {
 .finish {
   margin: 15px auto;
   height: max-content;
-  border: solid purple;
   display: none;
 }
 
 .finish h1 {
-  border: solid purple;
   font-size: 50px;
   padding: 10px;
   font-weight: 200px;
+  text-decoration-line: underline;
+  font-style: oblique;
 }
 
 .return {
   display:none;
+  height: 462px;
 }
 
 .return h1 {
@@ -144,6 +152,11 @@ section {
 
 .scorepage {
   display: none;
+  height: max-content;
+}
+
+.scorepage button {
+  margin-bottom:10px;
 }
 
 .scorepage h1 {
@@ -173,4 +186,8 @@ section {
 
 #lmao {
   font-size:10px;
+}
+
+#submit {
+  margin-bottom: 10px;
 }
